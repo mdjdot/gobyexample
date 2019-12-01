@@ -23,7 +23,7 @@ func main() {
 				total += state[key]
 				mutex.Unlock()
 				atomic.AddInt64(&ops, 1)
-				runtime.Gosched()
+				runtime.Gosched() // 防止goroutine在调度中饿死
 			}
 		}()
 	}
