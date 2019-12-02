@@ -30,4 +30,10 @@ func main() {
 例如，我们希望当服务器接收到一个 SIGTERM 信号时能够自动关机，
 或者一个命令行工具在接收到一个 SIGINT 信号时停止处理输入信息。
 这里讲的就就是在 Go 中如何通过通道来处理信号。
+
+$ go run main.go
+awaiting signal
+^C
+interrupt
+exiting
 */
