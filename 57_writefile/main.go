@@ -32,10 +32,10 @@ func main() {
 	check(err)
 	fmt.Println(n3)
 
-	f.Sync() // Sync commits the current contents of the file to stable storage.
+	f.Sync() // 调用 Sync 来将缓冲区的信息写入磁盘。
 
 	w := bufio.NewWriter(f)
 	n4, err := w.WriteString("buffered\n") // 9
 	fmt.Println(n4)
-	w.Flush() // Flush writes any buffered data to the underlying io.Writer.
+	w.Flush() // 使用 Flush 来确保所有缓存的操作已写入底层写入器。
 }
